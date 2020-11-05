@@ -181,6 +181,18 @@ UPROGS=\
 	_usertests\
 	_wc\
 	_zombie\
+        _frokl\
+        _prog2\
+	_square\
+	_CP\
+	_wordcount\
+	_pwd\
+	_mv\
+	_cd1\
+	_getpinfo\
+	_myls\
+	_head\
+	_big\
 
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)
@@ -249,8 +261,8 @@ qemu-nox-gdb: fs.img xv6.img .gdbinit
 
 EXTRA=\
 	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c\
-	ln.c ls.c mkdir.c rm.c stressfs.c usertests.c wc.c zombie.c\
-	printf.c umalloc.c\
+	ln.c ls.c mkdir.c rm.c stressfs.c usertests.c wc.c zombie.c big.c\
+	printf.c umalloc.c square.c CP.c wordcount.c pwd.c mv.c cd1.c getpinfo.c myls.c date.c head.c \
 	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
 	.gdbinit.tmpl gdbutil\
 
@@ -284,3 +296,4 @@ tar:
 	(cd /tmp; tar cf - xv6) | gzip >xv6-rev10.tar.gz  # the next one will be 10 (9/17)
 
 .PHONY: dist-test dist
+
